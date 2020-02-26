@@ -3,17 +3,14 @@ const notes = require("./notes")
 
 yargs.command({
     command: 'add',
-    describe: 'Добавить заметку',
     builder: {
         title: {
             type: 'string',
             demandOption: true,
-            describe: 'Название заметки'
         },
         body: {
             type: 'string',
             demandOption: true,
-            describe: 'Текст заметки'
         }
     },
     handler({ title, body }) {
@@ -23,7 +20,6 @@ yargs.command({
 
 yargs.command({
     command: 'list',
-    describe: 'Список заметок',
     handler() {
         notes.listNotes();
     }
@@ -31,12 +27,10 @@ yargs.command({
 
 yargs.command({
     command: 'read',
-    describe: 'Читает заметку',
     builder: {
         title: {
             type: 'string',
             demandOption: true,
-            describe: 'Название заметки'
         }
     },
     handler({title}) {
@@ -46,12 +40,10 @@ yargs.command({
 
 yargs.command({
     command: 'remove',
-    describe: 'Удаляет заметку',
     builder: {
         title: {
             type: 'string',
             demandOption: true,
-            describe: 'Название заметки'
         }
     },
     handler({title}) {

@@ -42,7 +42,7 @@ const addNote = (title, body) => {
 const listNotes = () => {
     readNotes(notes => {
         if (notes.length) {
-            console.log('Ваши заметки: ');
+            console.log('Current notes is: ');
             notes.forEach(note => {
                 console.log(note.title);
             });
